@@ -10,6 +10,7 @@ def students_edit(request, sid):
     return HttpResponse('<h1> Edit Student %s </h1>' % sid)
 def students_delete(request, sid):
     return HttpResponse('<h1> Delete Student %s </h1>' % sid)
+
 # Views for Groups
 def groups_list(request):
     return HttpResponse('<h1> Groups list </h1>')
