@@ -7,7 +7,7 @@ from django.http import HttpResponse
 def students_list(request):
     students = (
     {'id':1,
-     'first_name': u'Андрієнко',
+     'first_name': u'Андрієнков',
      'last_name': u'Андрій',
      'ticket': 101,
      'image': 'img/empty.png'},
