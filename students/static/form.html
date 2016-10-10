@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+ <head>
+    <meta charset="UTF-8"/>
+    <title> Форма редагування Студента </title>
+    <meta name= "description"
+          value = "Система Обліку Студентів Навчального Закладу"/>
+    <!--Include Styles-->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+ </head>
+
+  <body>
+    <!--Start Container-->
+    <div class='container'>
+      <!--Start Header-->
+      <div class='row' id='header'>
+        <div class='col-xs-8'>
+         <h2> Форма редагування Студента </h2>
+        </div>
+      </div>
+      <!-- End Header -->
+
+      <!-- Start Student Form -->
+      <form class='form-horizontal'>
+        <div class="form-group">
+          <label for="name" class="col-xs-2 control-label"> Ім'я*</label>
+          <div class="col-xs-3">
+            <input type="text" class="form-control"  id="name" placeholder="Віталій">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="middle name" class="col-xs-2 control-label"> По-батькові </label>
+          <div class="col-xs-3">
+            <input type="text" class="form-control"  id="middle name" placeholder="Іванович">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="surname" class="col-xs-2 control-label"> Прізвище* </label>
+          <div class="col-xs-3">
+            <input type="text" class="form-control"  id="surname" placeholder="Побода">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="student ID" class="col-xs-2 control-label"> № Білету* </label>
+          <div class="col-xs-3">
+            <input type="text" class="form-control"  id="student ID" placeholder="254">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="birth date" class="col-xs-2 control-label"> Дата народження </label>
+          <div class="col-xs-3">
+            <input type="date" class="form-control"  id="birth date" placeholder="1984-06-17">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="foto" class="col-xs-2 control-label"> Фото </label>
+          <div class="col-xs-3">
+            <p> Наразі <a href="#"> img/poboda.jpg </a> </p>
+            <p> Очистити </p>
+          </div>
+        </div>
+        <div class="form-group">
+         <label for="InputFile" class="col-xs-2"> </label>
+         <div class="row">
+          <span class="col-xs-1"> Змінити </span>
+          <input type="file" id="InputFile">
+         </div>
+        </div>
+        <div class="form-group">
+          <label for="Groups ID" class="col-xs-2 control-label"> № Групи </label>
+          <div class="col-xs-3">
+            <select class="form-control">
+              <option value=""> МтМ-21 </option>
+              <option value=""> МтМ-22 </option>
+              <option value=""> МтМ-23 </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+        <label for="notes" class="col-xs-2 control-label"> Додаткові нотатки </label>
+          <div class="col-xs-3">
+            <textarea class="form-control" rows="3" id="notes" placeholder="тест d"> </textarea>
+          </div>
+        </div>
+        <div style="background-color:#E0E0E0;">
+         <div class="col-md-offset-3">
+           <button type="submit" class="btn btn-primary"> Зберегти </button>
+           <button type="reset" class="btn btn-default"> Скасувати </button>
+         </div>
+        </div>
+      </form>
+
+        </div>
+      <!--Start Student Form-->
+
+
+    </div>
+    <!-- End Container -->
+
+
+    <!-- Javascripts Section -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+ </body>
+
+</html>
