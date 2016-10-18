@@ -2,13 +2,13 @@
 
 {% load static from staticfiles%}
 
-{% block meta_title %} Студенти {% endblock meta_title %}
+{% block meta_title %} Групи {% endblock meta_title %}
 
-{% block title%} База Студентів {% endblock title %}
+{% block title%} База Груп {% endblock title %}
 
 {% block content %}
 <!-- Add Student Button -->
-<a class="btn btn-primary col-xs-4" href="{% url "groups_add" %}" > Додати Групу </a>
+<a class="btn btn-primary col-xs-4 col-xs-offset-8" href="{% url "groups_add" %}" > Додати Групу </a>
 
 <!-- Start Groups Listing -->
 <table class="table table-hover table-striped">
@@ -33,7 +33,7 @@
             <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
-               <li role="presentation"><a role= "menuitem" tabindex="-1" href="/journal/{{group.id}}"> Відвідування </a></li>
+               <li role="presentation"><a role= "menuitem" tabindex="-1" href="{% url "journal_group" group.id%}"> Відвідування </a></li>
                <li role="presentation"><a role= "menuitem" tabindex="-1" href="{% url "groups_edit" group.id %}"> Редагувати </a></li>
                <li role="presentation"><a role= "menuitem" tabindex="-1" href="{% url "groups_delete" group.id %}"> Видалити </a></li>
               </ul>
@@ -43,21 +43,7 @@
     {%endfor%}
   </tbody>
 </table>
-<nav aria-label="Page navigation">
-  <ul class="pagination">
-                  <!--<li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>  -->
-      <li><a href="#">1</a></li>
-      <li class="active"><a href="#">2</a></li>
-      <li>
-        <a href="#" aria-label="Next">
-          <span aria-hidden="true">Далі</span>
-        </a>
-      </li>
-  </ul>
-</nav>
+
+{%include "students/pagination.html" %}
   <!-- End Groups Listing -->
 {% endblock content %}
