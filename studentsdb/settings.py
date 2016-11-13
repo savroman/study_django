@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'students',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES= [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,3 +126,5 @@ global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 "studentsdb.context_processors.students_proc",
 )
 #PORTAL_URL = 'http://localhost:8000'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
