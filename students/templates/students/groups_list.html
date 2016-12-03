@@ -24,8 +24,8 @@
   {% for group in groups %}
       <tr>
         <td> {{forloop.counter }} </td>
-        <td> <a title="Редагувати" href= "{% url "groups_edit" group.id %}"> {{group.name}} </a> </td>
-        <td> <a title="Редагувати" href= "{% url "groups_edit" group.id %}"> {{group.group_lider}} </a> </td>
+        <td> <a title="Редагувати" href= "{% url "groups_edit" group.id %}"> {{group.title}} </a> </td>
+        <td> <a title="Редагувати" href= "{% url "groups_edit" group.id %}"> {{group.leader}} </a> </td>
         <td>
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -33,7 +33,7 @@
             <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
-               <li role="presentation"><a role= "menuitem" tabindex="-1" href="{% url "journal_group" group.id%}"> Відвідування </a></li>
+               <li role="presentation"><a role= "menuitem" tabindex="-1" href="{% url "/journal/{{group.id}}}""> Відвідування </a></li>
                <li role="presentation"><a role= "menuitem" tabindex="-1" href="{% url "groups_edit" group.id %}"> Редагувати </a></li>
                <li role="presentation"><a role= "menuitem" tabindex="-1" href="{% url "groups_delete" group.id %}"> Видалити </a></li>
               </ul>
