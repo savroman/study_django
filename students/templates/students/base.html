@@ -14,6 +14,12 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ PORTAL_URL }}{% static "css/main.css"%}">
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="loadmore.js"></script>
+    <script>
+      $('.list').loadmore('{%url "home"%}');
+    </script>
 
     {% block extra_css %}{% endblock extra_css %}
 

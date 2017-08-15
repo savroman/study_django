@@ -7,6 +7,7 @@ from django.db import models
 class Student(models.Model):
     """Student Model."""
     class Meta(object):
+        ordering = ['last_name']
         verbose_name = u"Студент"
         verbose_name_plural = u"Студенти"
 
@@ -46,10 +47,10 @@ class Student(models.Model):
         verbose_name = u"Додаткові нотатки")
 
     student_group = models.ForeignKey('Group',
-        verbose_name=u"Група",
-        blank=False,
-        null=True,
-        on_delete=models.PROTECT)
+        verbose_name = u"Група",
+        blank = False,
+        null = True,
+        on_delete = models.PROTECT)
 
     def __unicode__(self):
         return u"%s %s" % (self.first_name, self.last_name)

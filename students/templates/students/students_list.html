@@ -10,30 +10,36 @@
 
 <!-- Add Student Button -->
 <div class="row" >
-<a class="btn btn-primary col-xs-4 col-xs-offset-8" href="{% url "students_add" %}"> Додати Студента</a>
+<a class="btn btn-primary col-xs-4 col-xs-offset-8" href="{% url "students_ad\
+d" %}"> Додати Студента</a>
 </div>
           <!-- Start Students Listing -->
 <table class="table table-hover table-striped">
   {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
   <thead>
     <tr>
-      <th> <a href=""> № </a> </th>
+      <th> <a href="{%url "home"%}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">
+        №
+        {% if order_by == 'id' and reverse != '1' %} &uarr;
+        {% elif order_by == 'id' and reverse == '1' %} &darr;
+        {% endif %}</a>
+      </th>
       <th> Фото </th>
-      <th> <a href="{%url "home"%}?order_by=last_name{% if request.GET.order_by == 'last_name' and request.GET.reverse != '1' %}&amp;reverse=1{% endif %}">
+      <th> <a href="{%url "home"%}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
         Прізвище
         {% if order_by == 'last_name' and reverse != '1' %} &uarr;
         {% elif order_by == 'last_name' and reverse == '1' %} &darr;
         {% endif %} </a>
       </th>
-      <th> <a href="{%url "home"%}?order_by=first_name{% if request.GET.order_by == 'first_name' and request.GET.reverse != '1' %}&amp;reverse=1{% endif %}">
+      <th> <a href="{%url "home"%}?order_by=first_name{% if order_by == 'first_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
         Імя
         {% if order_by == 'first_name' and reverse != '1'%} &uarr;
         {% elif order_by == 'first_name' and reverse == '1'%} &darr;
         {% endif %}</a>
       </th>
-      <th> <a href="{%url 'home'%}?order_by=ticket">
+      <th> <a href="{%url 'home'%}?order_by=ticket{% if order_by == 'ticket' and reverse != '1' %}&amp;reverse=1{% endif %}">
         № Білету
-        {% if order_by == 'ticketk' and reverse != '1'%} &uarr;
+        {% if order_by == 'ticket' and reverse != '1'%} &uarr;
         {% elif order_by == 'ticket' and reverse == '1'%} &darr;
         {% endif %}</a>
       </th>
@@ -44,7 +50,7 @@
   <tbody>
     {%for student in students %}
     <tr>
-      <td> {{forloop.counter}} </td>
+      <td> {{ student.id }} </td>
       <td> {%if student.photo%} <img class= "img-circle" height="30" width="30" src="{{student.photo.url}}">
            {%else%} <img class= "img-circle" height="30" width="30" src="static/img/empty.png"> {%endif%}
       </td>
@@ -68,6 +74,8 @@
       {% endfor %}
     </tbody>
 </table>
+<a class="button" href="">More...</a>
+<!--Pagonation-->
 {%include "students/pagination.html" %}
 <!--<nav aria-label="Page navigation">
   <ul class="pagination">
