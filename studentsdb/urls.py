@@ -16,11 +16,9 @@ urlpatterns = patterns('',
     url(r'^groups/(?P<gid>\d+)/edit/$', 'students.views.groups.groups_edit', name='groups_edit'),
     url(r'^groups/(?P<gid>\d+)/delete/$', 'students.views.groups.groups_delete', name='groups_delete'),
 
-    # Journal urls
-    #url(r'^journal/$', 'students.views.journal.journal', name='journal'),
-    #url(r'^journal/(?P<sid>\d+)/student$', 'students.views.journal_student', name='journal_student'),
-    #url(r'^journal/(?P<gid>\d+)/group$', 'students.views.journal_group', name='journal_group'),
-
+    #Journal urls
+    url(r'^journal/$', 'students.views.journal.journal', name='journal'),
+    
     url(r'^admin/', include(admin.site.urls)),
 )
 if DEBUG:
