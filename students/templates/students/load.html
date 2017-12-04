@@ -1,0 +1,10 @@
+{% load static from staticfiles %}
+
+<!-- Start Pagination -->
+
+{% if students.has_other_pages %}
+{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+<a class="btn btn-default btn-sm" href="">More...</a>
+{% endwith %}
+{% endif %}
+<!-- End Pagination -->

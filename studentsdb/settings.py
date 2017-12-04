@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students',
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES= [
@@ -123,3 +124,16 @@ global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 #PORTAL_URL = 'http://localhost:8000'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+# email settings
+# please, set here you smtp server details and your admin email
+ADMIN_EMAIL = 'contact@s010.ua'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '25'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+
+#link bootstrap style to forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
